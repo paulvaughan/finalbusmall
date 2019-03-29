@@ -5,8 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="./app.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Sarina" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">BusMall Consumer Analytics</h1>
+      <p class="lead">Select the images below that interest you the most:</p>
+      <hr class="my-4">
+      <p>Select one image at a time; images are reshuffle after each selection. Continue selecting until the select-counter receives 25 selections</p>
+      <h3>Thank you for your time and your participation!!</h3>
+    </div>
+  </div>  
+
+  <div id='imageContainer'></div>
   
+  <canvas id='busChart'></canvas>
+     
+  <h4><span id = 'selectTracker'></span>out of 25 selections remaining</h4>
+
+  <button onclick='startOver()'>RELOAD</button>
+
 </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./chart.js"></script>
 </html>
