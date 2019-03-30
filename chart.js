@@ -1,5 +1,5 @@
 //get canvas elementbyID
-let elChart = document.getElementById('myChart').getContext('2d');
+let elChart = document.getElementById('busChart').getContext('2d');
 //let imported = document.createELement('script')
 //imported.src = './main.js';
 //
