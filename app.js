@@ -24,10 +24,19 @@ let ImageConstructor = function (name, filePath, category, id) {
 
 let TotalClicked = 0;
 
+//check to verify if local storage exists
+ if(localStorage.length > 0){
+    let getData = localStorage.getItem('storageCharacterImageArray');
+//     //retrieve stored character Image array from local storage that contains updated clicks and showns
+       characterImageArray = JSON.parse(getData);
+//     //reassign the value of characterImageArray to the parsed version in local storage
+    TotalClicked = localStorage.getItem('TotalClickedStorage');
 
 
-
-//generate all 24 image objects as new "ImageConstructor(s) with the name, filePath and id  as properties within the constructor
+} else {
+    //     //if local storage does not exist, instantiate the constructor to create multiple objects of character images 
+    //instantiate our counstructor to create multiple instances/objects of our character images
+ //generate all 24 image objects as new "ImageConstructor(s) with the name, filePath and id  as properties within the constructor
 let Disguise = new ImageConstructor ('disguise', './assets/dogdisguise.jpg', 'novelty', 'disguise')
 let Polaroid = new ImageConstructor ('polaroid', './assets/polaroidcamera.jpg', 'novelty', 'polaroid')
 let Typewriter = new ImageConstructor ('typewriter', './assets/oldtyper.jpg', 'novelty', 'typewriter')
