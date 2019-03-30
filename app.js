@@ -142,3 +142,12 @@ function displayImages(){
 };
 
 
+function displayChartNow(){
+    if(TotalClicked > 25){
+        elImageContainer.removeEventListener('click', imageClicked)
+        displayChart();
+        localStorage.clear();
+    };
+
+};
+
