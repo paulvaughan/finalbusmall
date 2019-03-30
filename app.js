@@ -1,3 +1,5 @@
+"strict mode"
+
 let pictureArray = [];
 
 //declare variables which represent the  the four  categories  types for each page
@@ -5,6 +7,11 @@ let pictureArray = [];
 // let therapeuticsArray = [];
 // let noveltyItemsArray = [];
 // let sportsAttireArray = [];
+
+//find our image container using document.getElementById
+let elImageContainer = document.getElementById('imageContainer');
+//console.log(elImageContainer);
+
 
 let ImageConstructor = function (name, filePath, category, id) {
     this.name = name;
