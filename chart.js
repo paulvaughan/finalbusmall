@@ -21,7 +21,7 @@ function populateChart(property){
 // declares displayChart variable and assigns
 function displayChart() {
    elChart.innerHTML = '';
-   let myChart = new Chart(elChart, {
+   let busChart = new Chart(elChart, {
        //assigns the  type property to become a bar chart's
        type: 'bar',
        //assign the data property to contain objects such as subproperties, arrays and functions required to present data on graph and to HTML
