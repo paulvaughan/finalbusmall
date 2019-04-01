@@ -26,7 +26,7 @@ let TotalClicked = 0;
 
 //check to verify if local storage exists
  if(localStorage.length > 0){
-    let getData = localStorage.getItem('storageCharacterImageArray');
+    let getData = localStorage.getItem('storagepictureArray');
 //     //retrieve stored character Image array from local storage that contains updated clicks and showns
        characterImageArray = JSON.parse(getData);
 //     //reassign the value of characterImageArray to the parsed version in local storage
@@ -62,7 +62,8 @@ let TypeTwo = new ImageConstructor ('typetwo', './assets/vintagetype.jpg', 'nove
 let Utensils = new ImageConstructor ('utensils', './assets/utensils.jpg', 'kitchen', 'utensils')
 let HippyTwo = new ImageConstructor ('hippy2', './assets/hippy', 'novelty', 'hippy')
 
-pictureArray.push (Disguise, Polaroid,Typewriter,Vespa, Airforce,Basketball,Jersey,Retro, Soccer, SmokingPipe, Gear, Oldbike)
+pictureArray.push (Disguise, Polaroid,Typewriter,Vespa, Airforce,Basketball,Jersey,Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, 
+              RedVespa, Teacup,Hippie, Mixbox,Records,Wok, Moped,TypeTwo,Utensils,HippyTwo)
 
 //declare unassigned global variables for the four images to use locally as containers per page
 
@@ -107,7 +108,7 @@ function displayImages(){
            }
            secondImage = pictureObject;
         //if imageObject is not index 0 or 1, or 2, then it can be used as the thirdImage
-       } else if (i === 2){
+       } else {
          // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
          while(pictureObject.id === firstImage.id || pictureObject.id === secondImagefirstImage.id) {
              imageObject = randomImage();
@@ -115,16 +116,7 @@ function displayImages(){
          }
          thirdImage = pictureObject; 
        
-       } else {
-           // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
-           while(pictureObject.id === firstImage.id || pictureObject.id === secondImagefirstImage.id || pictureObject.id === thirdImagefirstImage.id) {
-               pictureObject = randomImage();
-               console.log('fourth while', imageObject.category);
-           }
-           fourthImage = pictureObject; 
-
-
-
+      
        };
        
        let elImage = document.createElement('img');
@@ -141,6 +133,47 @@ function displayImages(){
    };
 };
 
+    //invoke the displayImages function 
+displayImages();
+
+// define even handler function that will increment thetimes clicked for the images
+function imageClicked(event){
+    // if the id associated with the event target is associatd with firstImage, then  add click event increment by 1
+    if (event.target.id === firstImage.id){
+        firstImage.clicked += 1;
+    // if the id associated with event target the secondImage.id  is not the firstImage, but is the secondImage, add click event increment by 1
+    } else if (event.target.id === secondImage.id){
+        secondImage.clicked += 1;
+    // if the id associated with the event target is not firstImage, nor secondImage, but IS associated with thirdImage then add click event increment by 1
+    } else if (event.target.id === thirdImage.id){
+        thirdImage.clicked += 1;
+    }
+    //prints the event target as the id of the ImageObject
+    console.log('event target', event.target.id);
+    //prints the number of click events in accordance with the associated image
+    console.log('images', firstImage.clicked, secondImage.clicked, thirdImage.clicked);
+    
+      //invokes displayImages functions to display 3 new random images after the click event 
+      displayImages();
+      //Total clicks increases by 1 after each click
+      TotalClicked += 1;
+      //print the TotalClicked variable as each click increases
+      console.log(TotalClicked);
+    
+    //every time image is clicked, local storage saves character image array.
+    localStorage.setItem('storagepictureArray', JSON.stringify(pictureArray));
+    localStorage.setItem('TotalClickedStorage', TotalClicked);
+    //invoke chart function to display data  for images clicked and shown
+    displayChartNow();
+};
+
+    
+       
+    
+    
+    
+    
+    
 
 function displayChartNow(){
     if(TotalClicked > 25){
