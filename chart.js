@@ -52,4 +52,3 @@ function displayChart() {
        }
    });
 };
-//</script>

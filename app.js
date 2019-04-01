@@ -148,6 +148,5 @@ function displayChartNow(){
         displayChart();
         localStorage.clear();
     };
-
 };
-
+}
