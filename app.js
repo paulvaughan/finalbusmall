@@ -62,8 +62,8 @@ if (localStorage.length > 0) {
     let TypeTwo = new ImageConstructor('typetwo', './assets/vintagetype.jpg', 'novelty', 'typetwo')
     let Utensils = new ImageConstructor('utensils', './assets/utensils.jpg', 'kitchen', 'utensils')
     let HippyTwo = new ImageConstructor('hipster', './assets/hipster.jpg', 'novelty', 'hipster')
-
-    pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo)
+    let Eggholder= new ImageConstructor('egg', './assets/egholder.jpg', 'kitchen', 'egg')
+    pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo, Eggholder)
 
 };
 //declare unassigned global variables for the four images to use locally as containers per page
