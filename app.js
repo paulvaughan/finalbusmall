@@ -86,6 +86,7 @@ let firstImage;
 let secondImage;
 let thirdImage;
 
+displayImages();
 
 // define a function that will display the Random images
 function displayImages() {
@@ -117,8 +118,6 @@ function displayImages() {
                 console.log('third while', pictureObject.id);
             }
             thirdImage = pictureObject;
-
-
         };
 
         let elImage = document.createElement('img');
