@@ -41,7 +41,7 @@ if (localStorage.length > 0) {
     let Disguise = new ImageConstructor('disguise', './assets/dogdisguise.jpg', 'novelty', 'disguise')
     let Polaroid = new ImageConstructor('polaroid', './assets/polaroidcamera.jpg', 'novelty', 'polaroid')
     let Typewriter = new ImageConstructor('typewriter', './assets/oldtyper.jpg', 'novelty', 'typewriter')
-    let Vespa = new ImageConstructor('vespa', './assets/vesp.jpg', 'novelty', 'vespa')
+    let Vespa = new ImageConstructor('vespa', './assets/vespa.jpg', 'novelty', 'vespa')
     let Airforce = new ImageConstructor('airforce', './assets/brownairforce.jpg', 'sports', 'airforce')
     let Basketball = new ImageConstructor('basketball', './assets/nikeball.jpg', 'sports', 'basketball')
     let Jersey = new ImageConstructor('jersey', './assets/lakersjersey.jpg', 'sports', 'jersey')
@@ -50,7 +50,7 @@ if (localStorage.length > 0) {
     let SmokingPipe = new ImageConstructor('SmokingPipe', './assets/smokingpipe.jpg', 'novelty', 'SmokingPipe')
     let Gear = new ImageConstructor('gear', './assets/sportsbra.jpg', 'sports', 'gear')
     let Oldbike = new ImageConstructor('oldbike', './assets/oldbike.jpg', 'novelty', 'oldbike')
-    let Spoons = new ImageConstructor('spoon', '.assets/spoons.jpg', 'kitchen', 'spoons')
+    let Spoons = new ImageConstructor('spoon', './assets/spoons.jpg', 'kitchen', 'spoons')
     let RedKettle = new ImageConstructor('redkettle', './assets/redkettle.jpg', 'kitchen', 'redkettle')
     let RedVespa = new ImageConstructor('redvespa', './assets/redvespa.jpg', 'novelty', 'redvespa')
     let Teacup = new ImageConstructor('teacup', './assets/teacup.jpg', 'kitchen', 'teacup')
@@ -61,7 +61,7 @@ if (localStorage.length > 0) {
     let Moped = new ImageConstructor('moped', './assets/yellowmoped', 'novelty', 'moped')
     let TypeTwo = new ImageConstructor('typetwo', './assets/vintagetype.jpg', 'novelty', 'typetwo')
     let Utensils = new ImageConstructor('utensils', './assets/utensils.jpg', 'kitchen', 'utensils')
-    let HippyTwo = new ImageConstructor('hippy2', './assets/hippy', 'novelty', 'hippy')
+    let HippyTwo = new ImageConstructor('hipster', './assets/hipster', 'novelty', 'hipster')
 
     pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo)
 
@@ -85,7 +85,8 @@ function randomImage() {
     return pictureIndex;
 };
 
-
+//invoke the displayImages function 
+displayImages();
 
 function displayImages() {
     //reassign the elImageContainer to innerHTML each time the for loop runs
@@ -111,7 +112,7 @@ function displayImages() {
             //if imageObject is not index 0 or 1, or 2, then it can be used as the thirdImage
         } else {
             // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
-            while (pictureObject.id === firstImage.id || pictureObject.id === secondImagefirstImage.id) {
+            while (pictureObject.id === firstImage.id || pictureObject.id === secondImage.id) {
                 imageObject = randomImage();
                 console.log('third while', pictureObject.id);
             }
@@ -124,19 +125,22 @@ function displayImages() {
         // append elImage to the elImageContainer in HTML via the DOM
         elImageContainer.appendChild(elImage);
         //set an id attribute to image element
-        elImage.setAttribute('id', id);
+        elImage.setAttribute('id', pictureObjectid);
         //set the image HTML source tag as the images file path 
-        elImage.src = picObject.filePath;
+        elImage.src = pictureObject.filePath;
         //added an eventlistener to each image and to store the event within the "click" property of the image variable
         elImage.addEventListener('click', imageClicked);
         //increment the shown property  by 1 for each, time the imageObject "shown"   
         pictureObject.shown += 1;
     };
+    let elCountDown = document.getElementById('selectTracker'){
+        elCountDown.innerHTML = 25 - TotalClicked
 };
 
 
 //invoke the displayImages function 
 displayImages();
+
 
 // define even handler function that will increment thetimes clicked for the images
 function imageClicked(event) {
@@ -168,11 +172,6 @@ function imageClicked(event) {
     //invoke chart function to display data  for images clicked and shown
     displayChartNow();
 };
-
-
-
-
-
 
 
 
