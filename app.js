@@ -77,8 +77,7 @@ let thirdImage;;
 
 //ImageArray.category(sports)
 
-function randomImage(){
-    let randomNumber = Math.floor(Math.random() * ImageArray.length);
+
     let pictureIndex = pictureArray[randomNumber];
     pictureIndex.shown += 1
     return pictureIndex
@@ -167,12 +166,6 @@ function imageClicked(event){
     displayChartNow();
 };
 
-    
-       
-    
-    
-    
-    
     
 
 function displayChartNow(){
