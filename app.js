@@ -45,11 +45,11 @@ if (localStorage.length > 0) {
     let Basketball = new ImageConstructor('basketball', './assets/nikeball.jpg', 'sports', 'basketball')
     let Jersey = new ImageConstructor('jersey', './assets/lakersjersey.jpg', 'sports', 'jersey')
     let Retro = new ImageConstructor('retro', './assets/retrojordan.jpg', 'sports', 'retro')
-    let Soccer = new ImageConstructor('soccer', './assets/nikeboot.jpg', 'sports', 'soccer')
+    let Soccer = new ImageConstructor('soccer', './assets/nikeboots.jpg', 'sports', 'soccer')
     let SmokingPipe = new ImageConstructor('SmokingPipe', './assets/smokingpipe.jpg', 'novelty', 'SmokingPipe')
     let Gear = new ImageConstructor('gear', './assets/sportsbra.jpg', 'sports', 'gear')
     let Oldbike = new ImageConstructor('oldbike', './assets/oldbike.jpg', 'novelty', 'oldbike')
-    let Spoons = new ImageConstructor('spoon', '.assets/spoons.jpg', 'kitchen', 'spoons')
+    let Spoons = new ImageConstructor('spoon', './assets/spoons.jpg', 'kitchen', 'spoons')
     let RedKettle = new ImageConstructor('redkettle', './assets/redkettle.jpg', 'kitchen', 'redkettle')
     let RedVespa = new ImageConstructor('redvespa', './assets/redvespa.jpg', 'novelty', 'redvespa')
     let Teacup = new ImageConstructor('teacup', './assets/teacup.jpg', 'kitchen', 'teacup')
@@ -57,10 +57,10 @@ if (localStorage.length > 0) {
     let Mixbox = new ImageConstructor('mixbowl', './assets/mixbowl.jpg', 'kitchen', 'mixbowl')
     let Records = new ImageConstructor('records', './assets/oldrecords.jpg', 'novelty', 'records')
     let Wok = new ImageConstructor('wok', './assets/wok.jpg', 'kitchen', 'wok')
-    let Moped = new ImageConstructor('moped', './assets/yellowmoped', 'novelty', 'moped')
+    let Moped = new ImageConstructor('moped', './assets/yellowmoped.jpg', 'novelty', 'moped')
     let TypeTwo = new ImageConstructor('typetwo', './assets/vintagetype.jpg', 'novelty', 'typetwo')
     let Utensils = new ImageConstructor('utensils', './assets/utensils.jpg', 'kitchen', 'utensils')
-    let HippyTwo = new ImageConstructor('hippy2', './assets/hippy', 'novelty', 'hippy')
+    let HippyTwo = new ImageConstructor('hippy2', './assets/hipster.jpg', 'novelty', 'hippy')
 
     pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo)
 
@@ -111,8 +111,8 @@ function displayImages() {
             //if imageObject is not index 0 or 1, or 2, then it can be used as the thirdImage
         } else {
             // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
-            while (pictureObject.id === firstImage.id || pictureObject.id === secondImagefirstImage.id) {
-                imageObject = randomImage();
+            while (pictureObject.id === firstImage.id || pictureObject.id === secondImage.id) {
+                pictureObject = randomImage();
                 console.log('third while', pictureObject.id);
             }
             thirdImage = pictureObject;
@@ -124,9 +124,9 @@ function displayImages() {
         // append elImage to the elImageContainer in HTML via the DOM
         elImageContainer.appendChild(elImage);
         //set an id attribute to image element
-        elImage.setAttribute('id', id);
+        elImage.setAttribute('id', pictureObject.id);
         //set the image HTML source tag as the images file path 
-        elImage.src = picObject.filePath;
+        elImage.src = pictureObject.filePath;
         //added an eventlistener to each image and to store the event within the "click" property of the image variable
         elImage.addEventListener('click', imageClicked);
         //increment the shown property  by 1 for each, time the imageObject "shown"   
