@@ -134,7 +134,7 @@ function displayImages() {
         pictureObject.shown += 1;
     };
     let elCountDown = document.getElementById('selectTracker')
-        elCountDown.innerHTML = 25 - TotalClicked
+        elCountDown.innerHTML = 26 - TotalClicked
 };
 
 
