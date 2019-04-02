@@ -19,7 +19,7 @@ let ImageConstructor = function (name, filePath, category, id) {
     this.category = category;
     this.id = id;
     this.clicked = 0;
-    // this.shown = 0;  //Code included by owner - uncomment to test
+    this.shown = 0;
 }
 
 
@@ -66,18 +66,7 @@ if (localStorage.length > 0) {
     pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo)
 
 };
-//declare unassigned global variables for the four images to use locally as containers per page
-
-let firstImage;
-let secondImage;
-let thirdImage;
-// let fifthImage;
-// let sixthImage;
-
-
-
 //ImageArray.category(sports)
-
 
 function randomImage() {
     let randomNumber = Math.floor(Math.random() * pictureArray.length);
@@ -86,8 +75,9 @@ function randomImage() {
     return pictureIndex;
 };
 
-displayImages()
+displayImages();
 
+// define a function that will display the Random images
 function displayImages() {
     //reassign the elImageContainer to innerHTML each time the for loop runs
     elImageContainer.innerHTML = '';
@@ -113,12 +103,10 @@ function displayImages() {
         } else {
             // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
             while (pictureObject.id === firstImage.id || pictureObject.id === secondImage.id) {
-                pictureObject = randomImage();
+                imageObject = randomImage();
                 console.log('third while', pictureObject.id);
             }
             thirdImage = pictureObject;
-
-
         };
 
         let elImage = document.createElement('img');
@@ -133,13 +121,14 @@ function displayImages() {
         //increment the shown property  by 1 for each, time the imageObject "shown"   
         pictureObject.shown += 1;
     };
-    // let elCountDown = document.getElementById('selectTracker');
-    // elCountDown.innerHTML = 25 - TotalClicked;  //code included by owner - uncomment to test
+    let elCountDown = document.getElementById('selectTracker')
+        elCountDown.innerHTML = (25 - TotalClicked)
 };
 
 
 //invoke the displayImages function 
 displayImages();
+
 
 // define even handler function that will increment thetimes clicked for the images
 function imageClicked(event) {
@@ -171,12 +160,6 @@ function imageClicked(event) {
     //invoke chart function to display data  for images clicked and shown
     displayChartNow();
 };
-
-
-
-
-
-
 
 function displayChartNow() {
     if (TotalClicked > 25) {
