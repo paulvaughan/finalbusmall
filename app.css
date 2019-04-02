@@ -12,7 +12,7 @@ body{
     font-family: 'Sarina';
     box-shadow: 12px 10px 16px rgb(124, 124, 133);
     opacity: 0.6;
-    text-align: center   
+    text-align: center;   
   }
   
   /* .lead {
@@ -22,7 +22,7 @@ body{
   
   p {
     font-family: 'Raleway';
-    font-weight: 500;
+    font-weight: 200;
   }
   
   #imageContainer img{
