@@ -103,7 +103,7 @@ function displayImages() {
         } else {
             // run a while the conition is true generate a new random image if the shown thirdImage  is equal to first OR secondImage id
             while (pictureObject.id === firstImage.id || pictureObject.id === secondImage.id) {
-                imageObject = randomImage();
+                pictureObject = randomImage();
                 console.log('third while', pictureObject.id);
             }
             thirdImage = pictureObject;
@@ -127,7 +127,7 @@ function displayImages() {
 
 
 //invoke the displayImages function 
-displayImages();
+// displayImages();
 
 
 // define even handler function that will increment thetimes clicked for the images
