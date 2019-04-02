@@ -19,6 +19,7 @@ let ImageConstructor = function (name, filePath, category, id) {
     this.category = category;
     this.id = id;
     this.clicked = 0;
+    // this.shown = 0;  //Code included by owner - uncomment to test
 }
 
 
@@ -85,7 +86,7 @@ function randomImage() {
     return pictureIndex;
 };
 
-
+displayImages()
 
 function displayImages() {
     //reassign the elImageContainer to innerHTML each time the for loop runs
@@ -132,6 +133,8 @@ function displayImages() {
         //increment the shown property  by 1 for each, time the imageObject "shown"   
         pictureObject.shown += 1;
     };
+    // let elCountDown = document.getElementById('selectTracker');
+    // elCountDown.innerHTML = 25 - TotalClicked;  //code included by owner - uncomment to test
 };
 
 
