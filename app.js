@@ -63,21 +63,16 @@ if (localStorage.length > 0) {
     let Utensils = new ImageConstructor('utensils', './assets/utensils.jpg', 'kitchen', 'utensils')
     let HippyTwo = new ImageConstructor('hipster', './assets/hipster.jpg', 'novelty', 'hipster')
     let Eggholder= new ImageConstructor('egg', './assets/egholder.jpg', 'kitchen', 'egg')
+   
+   
+   
     pictureArray.push(Disguise, Polaroid, Typewriter, Vespa, Airforce, Basketball, Jersey, Retro, Soccer, SmokingPipe, Gear, Oldbike, Spoons, RedKettle, RedVespa, Teacup, Hippie, Mixbox, Records, Wok, Moped, TypeTwo, Utensils, HippyTwo, Eggholder)
 
 };
-//declare unassigned global variables for the four images to use locally as containers per page
-
-let firstImage;
-let secondImage;
-let thirdImage;
-// let fifthImage;
-// let sixthImage;
 
 
 
-//ImageArray.category(sports)
-
+//define random image function that will select a random image object from our characterimageArray
 function randomImage() {
     let randomNumber = Math.floor(Math.random() * pictureArray.length);
     let pictureIndex = pictureArray[randomNumber];
@@ -85,8 +80,14 @@ function randomImage() {
     return pictureIndex;
 };
 
+//declare unassigned global variables for the four images to use locally as containers per page
+
+let firstImage;
+let secondImage;
+let thirdImage;
 
 
+// define a function that will display the Random images
 function displayImages() {
     //reassign the elImageContainer to innerHTML each time the for loop runs
     elImageContainer.innerHTML = '';
@@ -133,7 +134,7 @@ function displayImages() {
         pictureObject.shown += 1;
     };
     let elCountDown = document.getElementById('selectTracker')
-        elCountDown.innerHTML = 25 - TotalClicked
+        elCountDown.innerHTML = (25 - TotalClicked)
 };
 
 
