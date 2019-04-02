@@ -125,7 +125,7 @@ function displayImages() {
         // append elImage to the elImageContainer in HTML via the DOM
         elImageContainer.appendChild(elImage);
         //set an id attribute to image element
-        elImage.setAttribute('id', pictureObjectid);
+        elImage.setAttribute('id', pictureObject.id);
         //set the image HTML source tag as the images file path 
         elImage.src = pictureObject.filePath;
         //added an eventlistener to each image and to store the event within the "click" property of the image variable
@@ -133,7 +133,7 @@ function displayImages() {
         //increment the shown property  by 1 for each, time the imageObject "shown"   
         pictureObject.shown += 1;
     };
-    let elCountDown = document.getElementById('selectTracker'){
+    let elCountDown = document.getElementById('selectTracker')
         elCountDown.innerHTML = 25 - TotalClicked
 };
 
