@@ -69,7 +69,7 @@ pictureArray.push (Disguise, Polaroid,Typewriter,Vespa, Airforce,Basketball,Jers
 
 let firstImage;
 let secondImage;
-let thirdImage;;
+let thirdImage;
 // let fifthImage;
 // let sixthImage;
 
