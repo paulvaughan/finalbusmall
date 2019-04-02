@@ -85,8 +85,7 @@ function randomImage() {
     return pictureIndex;
 };
 
-//invoke the displayImages function 
-displayImages();
+
 
 function displayImages() {
     //reassign the elImageContainer to innerHTML each time the for loop runs
@@ -134,7 +133,7 @@ function displayImages() {
         pictureObject.shown += 1;
     };
     let elCountDown = document.getElementById('selectTracker')
-        elCountDown.innerHTML = 26 - TotalClicked
+        elCountDown.innerHTML = 25 - TotalClicked
 };
 
 
