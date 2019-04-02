@@ -28,7 +28,7 @@ let TotalClicked = 0;
 if (localStorage.length > 0) {
     let getData = localStorage.getItem('storagepictureArray');
     //     //retrieve stored character Image array from local storage that contains updated clicks and showns
-    characterImageArray = JSON.parse(getData);
+      pictureArray = JSON.parse(getData);
     //     //reassign the value of characterImageArray to the parsed version in local storage
     TotalClicked = localStorage.getItem('TotalClickedStorage');
 
