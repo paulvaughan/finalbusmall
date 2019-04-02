@@ -15,57 +15,61 @@ body{
     text-align: center   
   }
   
-  .display-4, .lead {
+  /* .lead {
     text-align: center;
-    font-family: ''Quicksand', sans-serif';
-  }
+    font-family: 'Raleway';
+  } */
   
   p {
     font-family: 'Raleway';
     font-weight: 500;
   }
   
-  img{
+  #imageContainer img{
     border: 6px solid white;
-    transition: transform .2s;
-    height: auto;
-    max-width: 25%;
-    border-radius: 3%;
-    margin: 1.5em;
-  }
+  transition: transform .2s;
+  height: auto;
+  max-width: 25%;
+  border: 2px solid grey;
+  /* border-radius: 3%; */
+  margin: 1.5em;
+}
   
-  img:hover{
+  
+  #imageContainer img:hover{
     transform: scale(1.16);
     -webkit-transform: scale(1.16);
     -ms-transform: scale(1.16);
   }
   
   
-  button {
-  font-family: 'Abril Fatface', cursive;
-  float: center;
-  font-style: normal;
-  border-radius: 10%;
-  padding: 20px;
-  border: 2px solid rgb(25, 25, 48);
-  background-color: lightskyblue;
-  }
+  button[onclick] {
+    font-family: 'Raleway', cursive;
+    float: center;
+    font-size: 2em;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    border: 2px solid rgb(25, 25, 48);
+    background-color: #448ada;
+    }
   
-  button:hover{
+  button:hover, button:focus{
     transform: scale(1.12);
+    background: powderblue;
   }
   
   div {
     text-align: center;
   }
   
-  #selectTracker, h4 { 
+  h4, span, #selectTracker { 
     color: white;
     background: grey;
     font-size: 1.5em;
-    font-family: 'Sarina';
-    line-height: 1.4em;
-    width: 30%;
+    font-family: 'Kalam';
+    line-height: 1.65em;
+    border-radius: 8px;
+    width: 25%;
     margin: 20px auto 50px;
   }
   
