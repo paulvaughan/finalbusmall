@@ -19,6 +19,7 @@ let ImageConstructor = function (name, filePath, category, id) {
     this.category = category;
     this.id = id;
     this.clicked = 0;
+    this.shown = 0;
 }
 
 
